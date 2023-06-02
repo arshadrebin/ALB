@@ -168,6 +168,12 @@ Click on Route 53 >> DNS management >> Click on Hosted Zone >> Select the Hosted
 
 <img width="736" alt="Screenshot 2023-06-02 120444" src="https://github.com/arshadrebin/ALB/assets/116037443/91266c27-d75e-4c01-8ff1-7068387d2c99">
 
+Then you will get the site as below from the 2 instances since we deployed 2 instances in our ASG.
+
+<img width="874" alt="Screenshot 2023-06-02 122554" src="https://github.com/arshadrebin/ALB/assets/116037443/332f1f42-0c12-47a7-991a-de6e50fd5a5c">
+
+<img width="864" alt="Screenshot 2023-06-02 122609" src="https://github.com/arshadrebin/ALB/assets/116037443/7e44b814-b1b9-42bb-801c-4f7834bff2fa">
+
 
 
 
