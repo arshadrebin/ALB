@@ -4,5 +4,5 @@ An Application Load Balancer (ALB) is a service provided by Amazon Web Services 
 
 Two common deployment techniques used in software development and release management are canary deployment and blue-green deployment. By gradually implementing changes, they both seek to reduce the risk connected with releasing new versions of an application or service.
 
---- Canary Deployment:
+### Canary Deployment:
 Canary deployment involves releasing a new version of an application or service to a small subset of users or servers before making it available to the entire user base. The process is similar to how a canary in a coal mine was used to detect potential hazards. The idea is to test the new version in a controlled environment to identify any issues or performance problems before exposing it to a wider audience.
