@@ -14,3 +14,8 @@ Key steps in a canary deployment include:
 * Monitor the performance, error rates, and other metrics of the canary group closely to ensure it behaves as expected.
 * Gradually increase the percentage of traffic routed to the canary until it represents the entire user base.
 * If any issues arise during the canary phase, roll back to the stable version quickly to minimize the impact on users.
+
+Canary deployments enable quick validation and risk reduction by identifying potential issues early. They are especially helpful for deploying important modifications or mission-critical programmes.
+
+--- #### Blue green deployment
+
