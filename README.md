@@ -149,8 +149,19 @@ Then we need to edit the listener to redirect the HTTP request to HTTPS. For thi
 <img width="407" alt="Screenshot 2023-06-02 114620" src="https://github.com/arshadrebin/ALB/assets/116037443/861386da-9ccd-4cda-84f0-a74c5c031512">
 
 Again we need to make some changes in the listener section. So select the HTTPS:443 protocol in the listener section and click on the actions >> Manage Rules.
+You will get an interface as below.
 
 <img width="760" alt="Screenshot 2023-06-02 114814" src="https://github.com/arshadrebin/ALB/assets/116037443/2786efca-d2ec-463e-8a6c-a808964b1aa9">
+
+On this interface, click on the edit button on the right top corner and then ediot the default rule and add the entry like below.
+
+<img width="657" alt="Screenshot 2023-06-02 115610" src="https://github.com/arshadrebin/ALB/assets/116037443/b3c4e69f-9447-40a5-871b-fa607be41559">
+
+
+
+
+
+
 
 
 
