@@ -34,3 +34,37 @@ Key steps in a blue-green deployment include:
 Because the old environment is still in place and can be rapidly restored in the event of problems, blue-green deployments provide a dependable and reversible option to distribute new versions. This strategy reduces downtime and offers a simple rollback method.
 
 Both the blue-green deployment and the canary deployment strategies have their benefits and are appropriate in certain situations. The decision between them is based on your application's particular requirements, your level of risk tolerance, and the preferred deployment procedure.
+
+In order to demonstrate these, I need 3 versions of the applications. Here I'm writing a simple small index pages with 3 versions like version-1, version-2 and version-3. To make those versions please follow the below steps.
+
+#### Step 1
+---
+
+* Create a launch configuration
+
+Here I'm assigning the name for launch configuration as shopping-app-version-1 with Amazon AMI, it's ID is ami-0607784b46cbe5816 with instance type t2.micro.
+
+<img width="693" alt="Screenshot 2023-06-02 105515" src="https://github.com/arshadrebin/ALB/assets/116037443/8f90e579-a602-4f56-812a-c9743d1a45b4">
+
+
+Under the additional details give the user data as follows.
+
+```
+#!/bin/bash
+
+
+echo "ClientAliveInterval 60" >> /etc/ssh/sshd_config
+echo "LANG=en_US.utf-8" >> /etc/environment
+echo "LC_ALL=en_US.utf-8" >> /etc/environment
+systemctl restart sshd.service
+
+yum install httpd php -y
+
+cat <<EOF > /var/www/html/index.php
+<?php
+\$output = shell_exec('echo $HOSTNAME');
+echo "<h1><center><pre>\$output</pre></center></h1>";
+echo "<h1><center>shopping-app-version-1</center></h1>"
+?>
+EOF
+```
