@@ -157,6 +157,18 @@ On this interface, click on the edit button on the right top corner and then edi
 
 <img width="657" alt="Screenshot 2023-06-02 115610" src="https://github.com/arshadrebin/ALB/assets/116037443/b3c4e69f-9447-40a5-871b-fa607be41559">
 
+Then add a host header for the domain like as per yours and forward it to the Target Group which we created previously.
+
+### Step 7
+---
+
+* Point the domain to ALB via Route53.
+
+Click on Route 53 >> DNS management >> Click on Hosted Zone >> Select the Hosted Zone >> Create Record as follows.
+
+<img width="736" alt="Screenshot 2023-06-02 120444" src="https://github.com/arshadrebin/ALB/assets/116037443/91266c27-d75e-4c01-8ff1-7068387d2c99">
+
+
 
 
 
