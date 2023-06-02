@@ -140,3 +140,17 @@ Load the certificate from ACM and create the ALB as follows.
 
 <img width="568" alt="Screenshot 2023-06-02 113927" src="https://github.com/arshadrebin/ALB/assets/116037443/4b091a9b-e6e6-4c33-9095-2b1463131fda">
 
+### Step-6
+---
+
+Then we need to edit the listener to redirect the HTTP request to HTTPS. For this, select the above created ALB >> Listener tab >> Add listener as below
+
+
+<img width="407" alt="Screenshot 2023-06-02 114620" src="https://github.com/arshadrebin/ALB/assets/116037443/861386da-9ccd-4cda-84f0-a74c5c031512">
+
+Again we need to make some changes in the listener section. So select the HTTPS:443 protocol in the listener section and click on the actions >> Manage Rules.
+
+<img width="760" alt="Screenshot 2023-06-02 114814" src="https://github.com/arshadrebin/ALB/assets/116037443/2786efca-d2ec-463e-8a6c-a808964b1aa9">
+
+
+
