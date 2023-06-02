@@ -17,5 +17,5 @@ Key steps in a canary deployment include:
 
 Canary deployments enable quick validation and risk reduction by identifying potential issues early. They are especially helpful for deploying important modifications or mission-critical programmes.
 
-#### ---- Blue green deployment
+#### Blue green deployment ---
 
