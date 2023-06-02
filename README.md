@@ -20,4 +20,17 @@ Canary deployments enable quick validation and risk reduction by identifying pot
 
 #### Blue green deployment
 ---
+Blue-green deployment includes keeping two identical environments, referred to as "blue" and "green." The new version of the application is represented by the green environment, while the stable version is represented by the blue environment.
 
+Key steps in a blue-green deployment include:
+
+* The blue environment serves as the primary production environment, handling all user traffic.
+* Deploy the new version of the application to the green environment, ensuring it is tested and validated.
+* Switch the router or load balancer configuration to redirect traffic from the blue environment to the green environment.
+* Monitor the performance and behavior of the green environment, allowing time to identify any issues.
+* If any problems are detected, easily roll back to the blue environment by updating the router or load balancer configuration.
+* Once confident in the green environment, it becomes the new production environment, and the blue environment can be used for future updates.
+
+Because the old environment is still in place and can be rapidly restored in the event of problems, blue-green deployments provide a dependable and reversible option to distribute new versions. This strategy reduces downtime and offers a simple rollback method.
+
+Both the blue-green deployment and the canary deployment strategies have their benefits and are appropriate in certain situations. The decision between them is based on your application's particular requirements, your level of risk tolerance, and the preferred deployment procedure.
