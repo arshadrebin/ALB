@@ -135,9 +135,8 @@ On the Network mapping select the VPC and AZ's.
 Assign the required SG.
 Listener : Change it to HTTPS and forward to the shopping-app-version-1 TG
 Load the certificate from ACM and create the ALB as follows.
+<img width="568" alt="Screenshot 2023-06-02 113905" src="https://github.com/arshadrebin/ALB/assets/116037443/0be8b82a-380e-4082-b1bc-6356a84b274d">
 
-<img width="458" alt="Screenshot 2023-06-02 113905" src="https://github.com/arshadrebin/ALB/assets/116037443/0be8b82a-380e-4082-b1bc-6356a84b274d">
 
-
-<img width="434" alt="Screenshot 2023-06-02 113927" src="https://github.com/arshadrebin/ALB/assets/116037443/4b091a9b-e6e6-4c33-9095-2b1463131fda">
+<img width="568" alt="Screenshot 2023-06-02 113927" src="https://github.com/arshadrebin/ALB/assets/116037443/4b091a9b-e6e6-4c33-9095-2b1463131fda">
 
