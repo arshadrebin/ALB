@@ -67,4 +67,75 @@ echo "<h1><center><pre>\$output</pre></center></h1>";
 echo "<h1><center>shopping-app-version-1</center></h1>"
 ?>
 EOF
+
+
+systemctl restart php-fpm.service httpd.service
+systemctl enable php-fpm.service httpd.service
 ```
+
+Add the required security group, key pair then create the Launch Configuration.
+
+### Step 2
+---
+
+* Create Auto Scaling Group using the above Launch configuration.
+
+* **ASG name** : shopping-app-version-1
+* **LC** : shopping-app-version-1
+
+<img width="403" alt="Screenshot 2023-06-02 110123" src="https://github.com/arshadrebin/ALB/assets/116037443/1c330276-11f9-45ba-86d2-07f74f7e0fa5">
+
+Select the VPC and Availability Zones and subnets. Here I'm going with default VPC and AZ ap-south-1a and ap-south-1b.
+
+On the Configure group size and scaling policies, mention Group size as follows.
+
+**Desired capacity** = 2
+**Minimum capacity** = 2
+**Maximum capacity** = 2
+
+<img width="341" alt="Screenshot 2023-06-02 110508" src="https://github.com/arshadrebin/ALB/assets/116037443/b7060abf-25a5-4c8a-ba1e-d146dafcf000">
+
+At the last step mention a tag name as version-1 to identify the instance created by this ASG.
+
+![242018558-dc9e640a-5963-4ca1-8ff8-13e000c6bd00](https://github.com/arshadrebin/ALB/assets/116037443/1813ed9f-7f85-4ced-a280-ffe1d8f09003)
+
+### Step3
+---
+* Create a target group
+
+* Choose target type : instances
+* Target group name : shopping-app-version-1
+
+Giving the Health check path : /index.php
+
+Leave the rest of the field as it is.
+
+### Step 4
+---
+
+* Assign Target Group to Auto Scaling Group.
+
+Go to the Auto Scaling Group >>> Select Auto Scaling Group >>> Actions >>> Edit and select TG as below.
+
+<img width="446" alt="Screenshot 2023-06-02 113312" src="https://github.com/arshadrebin/ALB/assets/116037443/b6e70bc7-1e9e-4bd9-8ac2-b5306f811782">
+
+### Step 5
+---
+
+Create Application Load Balancer.
+
+Go to Load Balancer section >>> Select create icon nearby Application Load balamncer section.
+
+<img width="568" alt="Screenshot 2023-06-02 113522" src="https://github.com/arshadrebin/ALB/assets/116037443/88cd4945-3bc6-40a0-96d3-d17d96c94412">
+
+Create Application Load balancer with the below details.
+
+Load balancer name : shopping-app
+On the Network mapping select the VPC and AZ's.
+Assign the required SG.
+Listener : Change it to HTTPS and forward to the shopping-app-version-1 TG
+Load the certificate from ACM and create the ALB as follows.
+
+<img width="458" alt="Screenshot 2023-06-02 113905" src="https://github.com/arshadrebin/ALB/assets/116037443/0be8b82a-380e-4082-b1bc-6356a84b274d">
+<img width="434" alt="Screenshot 2023-06-02 113927" src="https://github.com/arshadrebin/ALB/assets/116037443/4b091a9b-e6e6-4c33-9095-2b1463131fda">
+
