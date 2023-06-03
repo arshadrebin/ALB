@@ -211,6 +211,8 @@ Then go to load balancer >> select the LB >> listener >> select the HTTPS:443 >>
 
 Edit the rules as follows
 
+<img width="621" alt="Screenshot 2023-06-03 104458" src="https://github.com/arshadrebin/ALB/assets/116037443/b57fb526-4500-4729-9a01-88c768b249ab">
 
+The above example is called as blue green deployment. The version will completely shift to the version 3 one from previous versions.
 
 
