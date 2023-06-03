@@ -174,12 +174,31 @@ Then you will get the site as below from the 2 instances since we deployed 2 ins
 
 <img width="864" alt="Screenshot 2023-06-02 122609" src="https://github.com/arshadrebin/ALB/assets/116037443/7e44b814-b1b9-42bb-801c-4f7834bff2fa">
 
+Now I want to change the version-1 of the application to version-2 with out any down time with 90% traffic to version-1 and 10% traffic to the version-2. In this case we are doing canary deployment. Please note in order to do so the Load Balancer must support canary deployment. ALB is such a one which is capable of it.
+
+![242182662-12f183b5-93ea-43a1-bafa-474d067de42d](https://github.com/arshadrebin/ALB/assets/116037443/75ba95af-968a-417c-9aaf-501a0b99f860)
+
+Repeat the steps from step-1 to step-5 by changing the names to shopping-app-version-2 instead of version-1.
+
+Then go to load balancer >> select the LB >> listener >> select the HTTPS:443 >> Actions >> Manage Rules.
+
+Edit the rules as follows.
 
 
+<img width="639" alt="Screenshot 2023-06-03 101615" src="https://github.com/arshadrebin/ALB/assets/116037443/643eba9a-2374-4fd2-8f6d-fd4371141904">
+
+If we are applying this rules, the end users get the simultaneous version at the time of new request or refresh.  In order to prevent this, we are selecting group-level-stickiness.
+
+In the context of load balancing, stickiness refers to the ability of a load balancer to maintain a consistent connection between a client and a particular backend server. When stickiness is enabled, the load balancer ensures that subsequent requests from the same client are forwarded to the same backend server, rather than distributing them across multiple servers.
+
+<img width="628" alt="Screenshot 2023-06-03 102325" src="https://github.com/arshadrebin/ALB/assets/116037443/c8da7ee3-b36a-4410-9e6c-2ec50e1acb76">
+
+Here we have applied 1 hour of the stickiness. So a user will get the same version of the application what he/she is getting initially rather than switching it into another.
 
 
+Then we will gradually change the ratio of the traffic weight and finally make the whole traffic to version-2. This called as canary deployment.
 
+<img width="629" alt="Screenshot 2023-06-03 102603" src="https://github.com/arshadrebin/ALB/assets/116037443/e4c63460-e5e9-43ef-9ada-94c8ddb0b74f">
 
-
-
+Now I want to change the version-2 of the application to version-3 with out any down time with 100% traffic to version-3 and 0% traffic to the version-2. In this case we are doing blue green deployment.
 
